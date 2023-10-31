@@ -17,9 +17,6 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: us-east-1
 
-      - name: Set Working Directory
-        run: cd my-eks-blueprints
-
       - name: Install TypeScript
         run: npm install -g typescript@5.22
 
