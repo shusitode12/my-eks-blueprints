@@ -1,21 +1,11 @@
-// lib/my-eks-blueprints-stack.ts
+// bin/my-eks-blueprints.ts
 import * as cdk from 'aws-cdk-lib';
-import { Construct } from 'constructs';
-import * as blueprints from '@aws-quickstart/eks-blueprints';
+import ClusterConstruct from '../lib/my-eks-blueprints-stack';
 
-export default class ClusterConstruct extends Construct {
-  constructor(scope: Construct, id: string, props?: cdk.StackProps) {
-    super(scope, id);
 
-    const account = props?.env?.account!;
-    const region = props?.env?.region!;
+const app = new cdk.App();
+const account = process.env.CDK_DEFAULT_ACCOUNT!;
+const region = process.env.CDK_DEFAULT_REGION;
+const env = { account, region }
 
-    const blueprint = blueprints.EksBlueprint.builder()
-    .version('auto')
-    .account(account)
-    .region(region)
-    .addOns()
-    .teams()
-    .build(scope, id+'-stack');
-  }
-}
+new ClusterConstruct(app, 'cluster', { env });
