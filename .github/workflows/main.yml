@@ -26,6 +26,8 @@ jobs:
           cd my-eks-blueprints
           npm install typescript@5.2.2 --save-dev
           npm install ts-node@10.9.1 --save-dev
+          npm install 
+          npm start
 
       - name: Configure AWS CLI
         uses: aws-actions/configure-aws-credentials@v1
