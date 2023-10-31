@@ -19,7 +19,7 @@ jobs:
       - name: Use Node.js v20
         uses: actions/setup-node@v2
         with:
-          node-version: '20' # Use a supported version of Node.js
+          node-version: '14' # Use a supported version of Node.js
 
       - name: Install TypeScript and ts-node
         run: |
