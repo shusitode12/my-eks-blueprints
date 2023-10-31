@@ -39,7 +39,7 @@ jobs:
 
       - name: Initialize CDK App
         run: |
-             cd my-eks-blueprints && cdk init app --language typescript
+             mkdir my-eks-blueprint && cd my-eks-blueprint && cdk init app --language typescript
 
       - name: Install EKS Blueprints
         run: npm install @aws-quickstart/eks-blueprints@1.12.0
