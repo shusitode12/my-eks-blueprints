@@ -1,0 +1,36 @@
+name: EKS Blueprint Deployment
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Set up AWS CLI
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: <YOUR_AWS_REGION>
+
+      - name: Set Working Directory
+        run: cd my-eks-blueprints
+
+      - name: Install TypeScript
+        run: npm install -g typescript@5.22
+
+      - name: Initialize CDK App
+        run: cdk init app --language typescript
+
+      - name: Install EKS Blueprints
+        run: npm install @aws-quickstart/eks-blueprints@1.12.0
+
+      - name: CDK Bootstrap
+        run: cdk bootstrap
+
+      - name: Deploy Cluster Stack
+        run: cdk deploy cluster-stack --require-approval never
