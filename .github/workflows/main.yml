@@ -45,4 +45,5 @@ jobs:
         run: npx cdk bootstrap aws://${{ secrets.AWS_ACCOUNT_ID }}/${{ secrets.AWS_REGION }}
 
       - name: Deploy Cluster Stack
-        run: cdk deploy cluster-stack --require-approval never  --app lib/my-eks-blueprints.ts
+        run: cd my-eks-blueprints && cdk deploy cluster-stack --require-approval never  --app lib/my-eks-blueprints.ts
+
