@@ -39,6 +39,7 @@ jobs:
 
       - name: Initialize CDK App
         run: |
+             mkdir my-eks-blueprints
              cd my-eks-blueprints
              cdk init app --language typescript
 
@@ -49,5 +50,5 @@ jobs:
         run: npx cdk bootstrap aws://${{ secrets.AWS_ACCOUNT_ID }}/${{ secrets.AWS_REGION }}
 
       - name: Deploy Cluster Stack
-        run: cdk deploy cluster-stack --require-approval never  --app lib/my-eks-blueprints.ts
+        run: cdk deploy cluster-stack --require-approval never  #--app lib/my-eks-blueprints.ts
 
