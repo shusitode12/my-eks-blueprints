@@ -46,6 +46,10 @@ jobs:
 
       - name: Bootstrap CDK
         run: npx cdk bootstrap aws://${{ secrets.AWS_ACCOUNT_ID }}/${{ secrets.AWS_REGION }}
+        
+      - name: Install Dependencies
+        run: npm install 
+
 
       - name: Deploy Cluster Stack
         run: npx ts-node bin/my-eks-blueprints.ts
