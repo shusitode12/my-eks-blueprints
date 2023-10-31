@@ -26,6 +26,7 @@ jobs:
           cd my-eks-blueprints
           npm install typescript@5.2.2 --save-dev
           npm install ts-node@10.9.1 --save-dev
+          npm fund 
           npm install --save-dev
           npm start --save-dev
 
