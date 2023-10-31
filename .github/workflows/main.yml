@@ -19,7 +19,7 @@ jobs:
       - name: Use Node.js v20
         uses: actions/setup-node@v2
         with:
-          node-version: '14' # Use a supported version of Node.js
+          node-version: '20' # Use a supported version of Node.js
 
       - name: Install TypeScript and ts-node
         run: |
@@ -45,4 +45,4 @@ jobs:
         run: npx cdk bootstrap aws://${{ secrets.AWS_ACCOUNT_ID }}/${{ secrets.AWS_REGION }}
 
       - name: Deploy Cluster Stack
-        run: cdk deploy cluster-stack --require-approval never  --app 'npx ts-node lib/my-eks-blueprints.ts'
+        run: cdk deploy cluster-stack --require-approval never  --app 'npx ts-node bin/my-eks-blueprints.ts'
