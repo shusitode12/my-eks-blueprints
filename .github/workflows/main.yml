@@ -25,7 +25,7 @@ jobs:
         run: |
           cd my-eks-blueprints
           npm install typescript@5.2.2 --save-dev
-          npm install ts-node@latest --save-dev
+          #npm install ts-node@latest --save-dev
 
       - name: Configure AWS CLI
         uses: aws-actions/configure-aws-credentials@v1
@@ -53,7 +53,7 @@ jobs:
              rm -f package-lock.json
 
       - name: Install Dependencies
-        run: npm install 
+        run: npm install && npm install ts-node@10.9.1 --save-dev
         
 
       - name: Deploy Cluster Stack
