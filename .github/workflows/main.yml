@@ -54,7 +54,9 @@ jobs:
 
       - name: Install Dependencies
         run: npm install 
-
+        
+      - name: Install start
+        run: npm start 
 
       - name: Deploy Cluster Stack
         run: npx ts-node --prefer-ts-exts bin/my-eks-blueprints.ts
