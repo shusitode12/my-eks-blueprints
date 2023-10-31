@@ -52,5 +52,6 @@ jobs:
 
 
       - name: Deploy Cluster Stack
-        run: npx ts-node bin/my-eks-blueprints.ts
+        run: npx ts-node --prefer-ts-exts bin/my-eks-blueprints.ts
+
 
