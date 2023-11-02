@@ -50,9 +50,6 @@ jobs:
       - name: run build
         working-directory: my-eks-blueprints
         run: npm run build
-      - name: run synth
-        working-directory: my-eks-blueprints
-        run: npm run build
 
       - name: run synth
         working-directory: my-eks-blueprints
