@@ -55,7 +55,7 @@ jobs:
         working-directory: my-eks-blueprints
         run: npx cdk synth
 
-      - name: Deploy Cluster Stack
+      - name: Deploy eks Cluster Stack
         working-directory: my-eks-blueprints
         run: cdk deploy cluster-stack --require-approval never  
 
