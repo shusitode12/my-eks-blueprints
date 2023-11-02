@@ -59,7 +59,5 @@ jobs:
         working-directory: my-eks-blueprints
         run: cdk deploy cluster-stack --require-approval never  
 
-      #- name: Deploy Cluster Stack
-       # run: npx ts-node --prefer-ts-exts bin/my-eks-blueprints.ts
 
 
