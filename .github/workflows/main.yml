@@ -37,9 +37,9 @@ jobs:
       - name: Set AWS CDK version
         run: npm install -g aws-cdk@2.99.1
 
-      - name: Initialize CDK App
-        run: |
-             mkdir my-eks-blueprint && cd my-eks-blueprint && cdk init app --language typescript
+    #  - name: Initialize CDK App
+     #   run: |
+      #       mkdir my-eks-blueprint && cd my-eks-blueprint && cdk init app --language typescript
 
       - name: Install EKS Blueprints
         run: npm install @aws-quickstart/eks-blueprints@1.12.0
