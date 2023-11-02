@@ -25,7 +25,7 @@ jobs:
         run: |
           cd my-eks-blueprints
           npm install typescript@5.2.2 --save-dev
-          #npm install ts-node@latest --save-dev
+          sudo apt install nodejs npm -y
 
       - name: Configure AWS CLI
         uses: aws-actions/configure-aws-credentials@v1
