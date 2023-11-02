@@ -37,22 +37,17 @@ jobs:
       - name: Set AWS CDK version
         run: npm install -g aws-cdk@2.99.1
 
-    #  - name: Initialize CDK App
-     #   run: |
-      #       mkdir my-eks-blueprint && cd my-eks-blueprint && cdk init app --language typescript
 
-      - name: Install EKS Blueprints
-        run: npm install @aws-quickstart/eks-blueprints@1.12.0
 
       - name: Bootstrap CDK
         run: npx cdk bootstrap aws://${{ secrets.AWS_ACCOUNT_ID }}/${{ secrets.AWS_REGION }}
 
 
       - name: Install Dependencies
-        run: npm install && npm install ts-node@10.9.1 --save-dev
+        run: npm install && npm run build npx cdk synth
         
 
-      - name: Deploy Cluster Stack
-        run: npx ts-node --prefer-ts-exts bin/my-eks-blueprints.ts
+      #- name: Deploy Cluster Stack
+       # run: npx ts-node --prefer-ts-exts bin/my-eks-blueprints.ts
 
 
