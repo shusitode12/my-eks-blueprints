@@ -44,8 +44,8 @@ jobs:
 
 
       - name: Install Dependencies
-        run: npm install && npm run build npx cdk synth
-        
+        run: npm install && npm run build && npx cdk synth
+     
 
       #- name: Deploy Cluster Stack
        # run: npx ts-node --prefer-ts-exts bin/my-eks-blueprints.ts
