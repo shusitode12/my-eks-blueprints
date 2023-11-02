@@ -47,10 +47,6 @@ jobs:
       - name: Bootstrap CDK
         run: npx cdk bootstrap aws://${{ secrets.AWS_ACCOUNT_ID }}/${{ secrets.AWS_REGION }}
 
-      - name: Remove modules and json
-        run: |
-             rm -rf node_modules
-             rm -f package-lock.json
 
       - name: Install Dependencies
         run: npm install && npm install ts-node@10.9.1 --save-dev
